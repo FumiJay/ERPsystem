@@ -1,0 +1,66 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="TopSide.master.cs" Inherits="ERPsystem.TopSide" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="js/jquery-ui-1.12.1/jquery-ui.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/popper.min.js"></script>
+    </asp:ContentPlaceHolder>
+
+    <style>
+        #Toptool {
+            background-color: rgba(32, 28, 38,0.8);
+            height: 50px;
+        }
+
+        #Tital {
+            color: white;
+            font-size: 30px;
+        }
+
+        #KeyWord {
+            margin: 5px 5px 5px 5px;
+        }
+
+        #LoginInfo {
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container-fluid">
+            <div id="Toptool" class="row justify-content-center align-items-center">
+                <div class="text-right col-6">
+                    <a id="Tital" href="Purchase.aspx">ERP_System</a>
+                </div>
+                <div class="text-right justify-content-center col-6">
+                    <asp:Label ID="LoginInfo" Text="" runat="server" />
+                    <a id="Login" class="btn btn-outline-light" runat="server" href="Login.aspx">Login</a>&nbsp;
+                    <a id="Purchase" runat="server" class="btn btn-outline-light" href="Purchase.aspx" visible="false">進貨單管理</a>&nbsp;
+                    <a id="Product" runat="server" class="btn btn-outline-light" href="Product.aspx" visible="false">商品管理</a>&nbsp;
+                    <asp:Button ID="Logout" CssClass="btn btn-outline-light" Text="Logout" runat="server" Visible="false" OnClick="Logout_Click"></asp:Button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
